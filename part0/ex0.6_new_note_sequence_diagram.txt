@@ -1,0 +1,23 @@
+note over browser:
+user writes something in the text field
+and clicks on the submit button
+end note
+
+note over browser:
+upon submit the registered JS event handler
+is executed and (preventing the default handling)
+1. it appends the new note to the local list
+   and redraws the notes on the frontend
+2. it performs a POST sending the new note
+   to the server
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over server:
+server receives user input
+(Content-Type: application/json)
+and updates notes list by appending the new note
+end note
+
+server-->browser: HTML - 201 created
